@@ -81,3 +81,172 @@
       font-size: 12px;
       color: #333;
     }
+  </style>
+</head>
+<body>
+
+  <div class="powered">Powered by Mustaqil AI</div>
+
+  <div class="login-container">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <h2>Login</h2>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Enter username">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter password">
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="remember">
+      <label for="remember">Eslab qolish</label>
+    </div>
+
+    <button class="btn">Kirish</button>
+
+    <div class="forgot">
+      <a href="#">Parolni unutdingizmi?</a>
+    </div>
+  </div>
+
+</body>
+</html>
+📌 Eslatma:
+outside-bg.jpg fon rasmi uchun kerak. Uni index.html bilan birga joylashtiring.
+
+logo.png — sizning logotipingiz. Agar yo‘q bo‘lsa, img tagini olib tashlashingiz mumkin yoki boshqa rasm nomi yozing.
+
+Kerak bo‘lsa sizga responsive (mobilga mos) qilishini ham yozib beraman.
+
+Ayting, backend (Firebase, PHP, yoki boshqa tizimga kirish`) kerakmi bu login uchun?
+
+
+
+
+
+
+
+
+Вы сказали:
+loqin qismi oq bulib turibiku xiralashtisr shuni
+
+
+ChatGPT сказал:
+Ajoyib! Siz aytgan oq login qutisini orqa fon bilan xiralashtirish (blur) effektini quyidagicha backdrop-filter orqali qilamiz. Quyidagi kodni to‘liq yangilab berdim:
+
+✅ YANGILANGAN index.html (blur bilan)
+html
+Копировать
+Редактировать
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(./outside-bg.jpg) no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.1); /* Transparent white */
+      border-radius: 10px;
+      padding: 40px 30px;
+      backdrop-filter: blur(10px); /* 🔥 Blur effect here */
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.3); /* optional */
+    }
+
+    .login-container h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 10px;
+      width: 80px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 14px;
+    }
+
+    input::placeholder {
+      color: #ddd;
+    }
+
+    label {
+      font-size: 14px;
+      align-self: flex-start;
+      color: #fff;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .checkbox-container input {
+      margin-right: 8px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #5c3ea0;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .forgot {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .forgot a {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+
+    .powered {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 12px;
+      color: #fff;
+    }
